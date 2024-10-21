@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# Ignore Python environment folders
+python-sql/
+
 # Distribution / packaging
 .Python
 build/
