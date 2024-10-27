@@ -10,7 +10,6 @@ Is a data validation and settings management library using Python type annotatio
 Is a library that combines the best features of SQLAlchemy and Pydantic.<br> 
 It simplifies the creation of SQLAlchemy models using Pydantic for data validation.<br>
 
-
 **ORM** (Object-Relational Mapping)<br>
 Allows you to interact with the database using Python objects instead of writing raw SQL queries.<br>
 This makes the code more readable and maintainable.<br>
@@ -82,12 +81,8 @@ python-sql/
 │   ├── main.py
 │   └── models.py
 │     
-├── tests/
-│   ├── conftest.py
-│   ├── test_script1.py
-│   └── test_loggingSetup.py
 ├── .gitignore
-├── pytest.ini
+├── sqliteDB.db
 └── README.md
 ```
 
@@ -127,6 +122,22 @@ if __name__ == "__main__":
 > python src/main.py
 Raw SQL: (1, 'Book One', 'Summary of Book One', 1)
 ORM SQL: author_id=1 id=1 summary='Summary of Book One' title='Book One'
+```
+
+---
+
+### How to do a quick check on the DB:
+```Bash
+> sqlite3 ./sqliteDB.db
+SQLite version 3.42.0 2023-05-16 12:36:15
+Enter ".help" for usage hints.
+sqlite> .tables
+author  book
+sqlite> SELECT * FROM book;
+1|Book One|Summary of Book One|1|
+2|Book Two|Summary of Book Two|1|
+3|Book Three|Summary of Book Three|2|
+4|Book Four|Summary of Book Four|2|
 ```
 
 ---
